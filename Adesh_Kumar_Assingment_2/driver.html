@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title> Adesh Kumar's Assignment 2 </title>
+
+</head>
+
+<body onload="main()">
+  <p> Assignment 2 </p>
+  <canvas id="webgl" width="500" height="500">
+    Please use a browser that supports "canvas"
+  </canvas>
+
+      <!-- Include external libraries -->
+      <script src = "lib/webgl-utils.js"></script>
+      <script src = "lib/webgl-debug.js"></script>
+      <script src = "lib/cuon-utils.js"></script>
+      <script src = "lib/load-file.js"></script>
+
+      <!-- Include main program -->
+      <script src = "prog/main.js"></script>
+
+      <!-- Include internal functions -->
+      <script src = "prog/eventFunctions.js"></script>
+      <script src = "prog/glslFunctions.js"></script>
+      <script src = "prog/htmlFunctions.js"></script>
+
+      <!-- Include scene objects -->
+      <script src = "prog/scene/scene.js"></script>
+      <script src = "prog/scene/vertex.js"></script>
+      <script src = "prog/scene/geometry.js"></script>
+
+      <!-- Include geometric objects -->
+      <script src = "prog/geometries/circle.js"></script>
+      <script src = "prog/geometries/square.js"></script>
+      <script src = "prog/geometries/triangle.js"></script>
+
+      <!-- Include shaders -->
+      <script src = "prog/shaders.js"></script>
+
+  <!-- YOUR CODE HERE -->
+  <br>
+  <p id="coord">the answer to life</p>
+  <button type="button" id="clearButton">Clear Canvas</button>
+  <br/>
+
+  <button type="button" id="tri">Triangle</button>
+  <button type="button" id="squ">Square</button>
+  <button type="button" id="cir">Circle</button>
+
+  <p> Point Color: </p>
+
+  <div class="range">
+    <div>Red <input type="range" min="0" max="255" step="1" id="red" value= "255">
+         Green <input type="range" min="0" max="255" step="1" id="green" value= "255">
+         Blue <input type="range" min="0" max="255" step="1" id="blue" value= "255"></div>
+  </div>
+
+  <div class="slidecontainer">
+      <input type="range" min="1" max="100" value="50" class="slider" id="sizeSlider">
+      Shape Size
+    </div>
+
+    <div class="slidecontainer">
+        <input type="range" min="4" max="30" value="12" class="slider" id="cirseg">
+        Circle Segments
+      </div>
+
+</body>
+</html>

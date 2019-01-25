@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <title>Press and Hold</title>
+  <style>
+    #item {
+      margin: 30px;
+      width: 150px;
+      height: 150px;
+      background-color: #EEE;
+      border: 5px dashed #111;
+      border-radius: 50%;
+    }
+ 
+    #item:hover {
+      background-color: #CCC;
+      cursor: pointer;
+    }
+  </style>
+</head>
+ 
+<body>
+ 
+  <div id="item"></div>
+ 
+  <script>
+    // The item (or items) to press and hold on
+    var item = document.querySelector("#item");
+ 
+    var timerID;
+    var counter = 0;
+ 
+  
+ 
+    // Increase or decreae value to adjust how long
+    // one should keep pressing down before the pressHold
+    // event fires
+    var pressHoldDuration = 50;
+ 
+    // Listening for the mouse and touch events    
+    item.addEventListener("mousedown", pressingDown, false);
+    item.addEventListener("mouseup", notPressingDown, false);
+    function pressingDown(e) {
+      // Start the timer
+      requestAnimationFrame(timer);
+ 
+      console.log("Pressing!");
+    }
+ 
+    function notPressingDown(e) {
+      // Stop the timer
+      cancelAnimationFrame(timerID);
+      counter = 0;
+ 
+      console.log("Not pressing!");
+    }
+ 
+    //
+    // Runs at 60fps when you are pressing down
+    //
+    function timer() {
+      console.log("Timer tick!");
+ 
+      if (counter < 100) {
+        timerID = requestAnimationFrame(timer);
+        counter++;
+      } else {
+        console.log("Press threshold reached!");
+      }
+    }
+ 
+  </script>
+</body>
+ 
+</html>

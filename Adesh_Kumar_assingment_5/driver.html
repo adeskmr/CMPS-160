@@ -1,0 +1,73 @@
+<html lang="en">
+  <head>
+      <meta charset="utf-8"/>
+      <link rel="shortcut icon" href="external/textures/checkerboard.png">
+      <title> Adesh Kumar's Assignment 5 </title>
+    </head>
+
+    <body onload="main()">
+      <p> Assignment 5 </p>
+      <canvas id="webgl" >
+        Please use a browser that supports "canvas"
+      </canvas>
+
+      <!-- Include external libraries -->
+      <script src = "lib/webgl-utils.js"></script>
+      <script src = "lib/webgl-debug.js"></script>
+      <script src = "lib/updated-cuon-utils.js"></script>
+      <script src = "lib/cuon-matrix.js"></script>
+      <script src = "lib/cuon-utils.js"></script>
+
+      <!-- Include main program -->
+      <script src = "prog/main.js"></script>
+
+      <!-- Include tick function -->
+      <script src = "prog/tick.js"></script>
+
+      <!-- Include internal functions -->
+      <script src = "prog/eventFunctions.js"></script>
+      <script src = "prog/glslFunctions.js"></script>
+      <script src = "prog/htmlFunctions.js"></script>
+      <script src = "prog/camera.js"></script>
+      <script src = "prog/file-loading.js"></script>
+
+      <!-- Include scene objects -->
+      <script src = "prog/scene/scene.js"></script>
+      <script src = "prog/scene/vertex.js"></script>
+      <script src = "prog/scene/geometry.js"></script>
+
+      <!-- Include geometric objects -->
+      <script src = "prog/geometries/StaticCube.js"></script>
+   
+
+      <!-- Include shaders -->
+      <script src = "prog/shaders.js"></script>
+
+      <!-- OBJ Loading -->
+      <script src = "lib/obj_loading/webgl-obj-loader.js"></script>
+      <script src = "lib/obj_loading/loadedOBJ.js"></script>
+      
+
+
+
+
+
+      <p id="instructions" style="display: inline-block; margin-right: 10px">
+        <div class="controls" style="position: absolute;right: 0;top: 0;z-index: 12;">
+          <select id="projMatrix" value="1">
+            <option value="1">Projection</option>
+            <option value="2">Orthogonal</option>
+          </select>
+          <label>Zoom</label><input style="direction:rtl" id="fov" type="range" min="10" max="160" value="90">
+          <label>Near</label><input id="near" type="range" min="0.1" max="12" step="0.1" value="0.1">
+          <label>Far</label><input id="far" type="range" min="1" max="12" value="12">
+        </div>
+      </p>
+     
+      <!--To clear the JS a bit, we do clear directly in HTML-->
+      <br />
+
+    
+</body>
+</html>
+
